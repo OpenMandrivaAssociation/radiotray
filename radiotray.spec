@@ -1,24 +1,20 @@
 Summary:	Radio Tray is a streaming player for listening to online radios
 Name:		radiotray
-Version:	0.7.2
+Version:	0.7.3
 Release:	1
-BuildArch:	noarch 
 Group:		Sound
 License:	GPLv1
 URL:		http://radiotray.sourceforge.net
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext
 BuildRequires:	pyxdg
 BuildRequires:	python-devel
-
-# Explicit dependencies required because there is no automatic dependencies
-# resolution for the python modules.
 Requires:	gstreamer0.10-python
 Requires:	pygtk2
 Requires:	python-lxml
 Requires:	python-pyinotify
+BuildArch:	noarch 
 
 %description
 Radio Tray is an online radio streaming player that runs on a Linux system
@@ -30,8 +26,6 @@ radios. And that's the sole purpose of Radio Tray.
 
 %prep
 %setup -q
-
-# Remove unnecessary shebang
 sed -i -e '/^#!\//, 1d' src/radiotray.py
 
 %build
@@ -49,6 +43,4 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/radiotray.desktop
 %{_datadir}/pixmaps/%{name}.png
 %{_docdir}/%{name}-%{version}/*
 %{python_sitelib}/%{name}/
-
 %{python_sitelib}/%{name}*egg-info
-
