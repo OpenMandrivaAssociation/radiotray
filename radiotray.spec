@@ -4,7 +4,7 @@ Version:	0.7.3
 Release:	2
 Group:		Sound
 License:	GPLv1
-URL:		http://radiotray.sourceforge.net
+URL:		https://radiotray.sourceforge.net
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext
